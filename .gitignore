@@ -8,5 +8,5 @@
 *.iws
 
 # Generated data - do not push
-/output
+/data/output
 *jar

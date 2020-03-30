@@ -16,19 +16,19 @@ import java.util.stream.Stream;
  * FileStream-Klasse zum lesen von allen Input-Text-Dateien sowie generieren von
  * Output-Text-Dateien
  */
-public class DatanameTextfileStream implements FileStream {
+public class PuzzleTextfileStream implements FileStream {
 
-  private static DatanameTextfileStream INSTANCE;
+  private static PuzzleTextfileStream INSTANCE;
   private List<String> fileInputList;
   private boolean fileReadError = false;
 
-  private DatanameTextfileStream() {
+  private PuzzleTextfileStream() {
     fileInputList = new ArrayList<>();
   }
 
-  public static DatanameTextfileStream getINSTANCE() {
+  public static PuzzleTextfileStream getINSTANCE() {
     if (INSTANCE == null) {
-      INSTANCE = new DatanameTextfileStream();
+      INSTANCE = new PuzzleTextfileStream();
     }
     return INSTANCE;
   }

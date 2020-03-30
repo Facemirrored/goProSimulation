@@ -14,7 +14,7 @@
             <manifest>
               <addClasspath>true</addClasspath>
               <classpathPrefix>lib/</classpathPrefix>
-              <mainClass>de.goProSimulation.Application</mainClass>
+              <mainClass>de.goProSimulation.controller.Controller</mainClass>
             </manifest>
           </archive>
         </configuration>

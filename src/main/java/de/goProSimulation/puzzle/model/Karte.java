@@ -4,11 +4,17 @@ import java.util.Arrays;
 
 public class Karte {
 
+  private int kartennummer;
   private int[] kanten;
   private int rotationsposition = 0;
 
-  public Karte(final int[] kanten) {
+  public Karte(final int kartennummer, final int[] kanten) {
+    this.kartennummer = kartennummer;
     this.kanten = kanten;
+  }
+
+  public int getKartennummer() {
+    return kartennummer;
   }
 
   public int getRotationsposition() {

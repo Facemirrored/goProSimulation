@@ -63,5 +63,6 @@ public class TextfileStream implements FileStream {
   @Override
   public void saveFile(List<String> outputFileContextList) {
     // TODO: write for eacht item textfile
+    throw new UnsupportedOperationException();
   }
 }

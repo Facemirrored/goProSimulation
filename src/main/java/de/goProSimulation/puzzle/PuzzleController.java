@@ -11,6 +11,7 @@ public class PuzzleController {
 
   private I_Puzzle puzzle;
   private List<Karte> karteList;
+  private boolean geloest = false;
 
 
   public PuzzleController() {
@@ -22,12 +23,20 @@ public class PuzzleController {
     this.karteList = karteList;
   }
 
+  public I_Puzzle getPuzzle() {
+    return puzzle;
+  }
+
+  public boolean isGeloest() {
+    return geloest;
+  }
+
   public List<Karte> getKarteList() {
     return karteList;
   }
 
-  public boolean loesePuzzle(final List<Karte> karten) {
-    return loesePuzzle(karten, 0);
+  public void loesePuzzle(final List<Karte> karten) {
+    geloest = loesePuzzle(karten, 0);
   }
 
   private boolean loesePuzzle(final List<Karte> karten, final int index) {

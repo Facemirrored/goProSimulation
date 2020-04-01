@@ -5,6 +5,7 @@ import de.goProSimulation.exception.InvalidInputDataException;
 import de.goProSimulation.fileStream.TextfileStream;
 import de.goProSimulation.puzzle.mapper.PuzzleMapper;
 import de.goProSimulation.puzzle.model.Karte;
+import java.util.ArrayList;
 import java.util.List;
 import java.util.Scanner;
 
@@ -25,6 +26,8 @@ public class Controller {
       // Lese Daten
       List<String> list = textfileStream.readFile(args[0]);
 
+      List<String> outputStringList = new ArrayList<>();
+
       for (String puzzleContent : list) {
         try {
           // Mapping --> internes Datenmodell
@@ -32,19 +35,19 @@ public class Controller {
 
           // Erstelle und Berechne Puzzle
           PuzzleController puzzleController = new PuzzleController(karten);
-          boolean solve = puzzleController.loesePuzzle(puzzleController.getKarteList());
+          puzzleController.loesePuzzle(puzzleController.getKarteList());
 
-          // TODO: finish this
           // Mapping --> externe Datenmodell
-          //String output = puzzleMapper.mapToFile(puzzleController);
-
-          // Schreibe Output
+          outputStringList.add(puzzleMapper.mapToFile(puzzleContent, puzzleController));
 
         } catch (InvalidInputDataException iide) {
           System.out.println(iide.getMessage());
-          // TODO: Output-Datei mit Fehler
+          outputStringList.add(iide.getMessage());
         }
       }
+
+      textfileStream.saveFile(outputStringList);
+
     } catch (IllegalArgumentException | FileStreamReadException exception) {
       System.out.println(exception.getMessage());
       System.exit(-1);

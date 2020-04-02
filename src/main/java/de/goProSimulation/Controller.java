@@ -1,9 +1,10 @@
-package de.goProSimulation.puzzle;
+package de.goProSimulation;
 
 import de.goProSimulation.exception.FileStreamReadException;
 import de.goProSimulation.exception.InvalidInputDataException;
 import de.goProSimulation.fileStream.TextfileStream;
-import de.goProSimulation.puzzle.mapper.PuzzleMapper;
+import de.goProSimulation.puzzle.PuzzleController;
+import de.goProSimulation.puzzle.PuzzleMapper;
 import de.goProSimulation.puzzle.model.Karte;
 import java.util.ArrayList;
 import java.util.List;
@@ -30,6 +31,8 @@ public class Controller {
 
       for (String puzzleContent : list) {
         try {
+          System.out.println("Verarbeite nächste Datei...");
+
           // Mapping --> internes Datenmodell
           List<Karte> karten = puzzleMapper.mapToKarten(puzzleContent);
 

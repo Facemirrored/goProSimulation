@@ -1,7 +1,6 @@
-package de.goProSimulation.puzzle.mapper;
+package de.goProSimulation.puzzle;
 
 import de.goProSimulation.exception.InvalidInputDataException;
-import de.goProSimulation.puzzle.PuzzleController;
 import de.goProSimulation.puzzle.model.Feld;
 import de.goProSimulation.puzzle.model.Karte;
 import java.util.ArrayList;

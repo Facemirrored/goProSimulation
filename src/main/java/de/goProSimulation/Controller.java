@@ -2,6 +2,7 @@ package de.goProSimulation;
 
 import de.goProSimulation.exception.FileStreamReadException;
 import de.goProSimulation.exception.InvalidInputDataException;
+import de.goProSimulation.fileStream.FileStream;
 import de.goProSimulation.fileStream.TextfileStream;
 import de.goProSimulation.puzzle.PuzzleController;
 import de.goProSimulation.puzzle.PuzzleMapper;
@@ -12,9 +13,6 @@ import java.util.Scanner;
 
 public class Controller {
 
-  private static TextfileStream textfileStream = TextfileStream.getINSTANCE();
-  private static PuzzleMapper puzzleMapper = PuzzleMapper.getInstance();
-
   public static void main(String[] args) {
     // TODO: scanner next using
     try (Scanner scanner = new Scanner(System.in)) {
@@ -23,6 +21,9 @@ public class Controller {
         throw new IllegalArgumentException("Argumente stimmen nicht überein. "
             + "Bitte übergeben Sie beim ausführen den Pfad der Input- sowie Output-Dateien an.");
       }
+
+      PuzzleMapper puzzleMapper = PuzzleMapper.getInstance();
+      FileStream textfileStream = TextfileStream.getINSTANCE();
 
       // Lese Daten
       List<String> list = textfileStream.readFile(args[0]);

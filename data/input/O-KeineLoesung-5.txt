@@ -1,0 +1,15 @@
+%     Erwartetes Ergebnis:
+%     Keine Loesung, Ziffer 1 und 2 jeweils auf zwei Karten. Zwei Karten können sich nicht mit der gleichen Seite berühren.
+%
+0 0 0 0 0
+0 0 0 0 0
+0 0 0 0 0
+0 0 0 0 0
+0 0 0 0 0
+0 0 0 0 0
+0 0 0 0 0
+0 0 0 0 0
+0 0 0 0 0
+0 0 0 0 0
+0 0 0 1 2
+0 0 0 1 2

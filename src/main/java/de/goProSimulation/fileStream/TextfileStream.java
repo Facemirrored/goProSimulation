@@ -1,7 +1,9 @@
 package de.goProSimulation.fileStream;
 
 import de.goProSimulation.exception.FileStreamReadException;
+import java.io.BufferedWriter;
 import java.io.File;
+import java.io.FileWriter;
 import java.io.IOException;
 import java.nio.charset.StandardCharsets;
 import java.nio.file.Files;
@@ -44,7 +46,6 @@ public class TextfileStream implements FileStream {
 
     Arrays.stream(inputFilesList).forEach(file -> {
       content.setLength(0);
-      System.out.println("---Lese INPUT-DATEI <" + file + ">---");
 
       try (Stream<String> stream = Files
           .lines(Paths.get(path + "\\" + file), StandardCharsets.UTF_8)) {
@@ -61,8 +62,18 @@ public class TextfileStream implements FileStream {
   }
 
   @Override
-  public void saveFile(List<String> outputFileContextList) {
-    // TODO: write for eacht item textfile
-    throw new UnsupportedOperationException();
+  public void saveFile(final String path, List<String> outputFileContextList)
+      throws FileStreamReadException {
+
+    for (int i = 0; i < outputFileContextList.size(); ++i) {
+      try (BufferedWriter writer = new BufferedWriter(
+          new FileWriter(path + "\\output_" + i + ".txt", false))) {
+        writer.append(outputFileContextList.get(i));
+      } catch (IOException ioe) {
+        throw new FileStreamReadException(
+            "Fehler beim schreiben der Dateien. Prüfen Sie die Gültigkeit "
+                + "sowie Zugriffsrechte und versuchen Sie es erneut.");
+      }
+    }
   }
 }

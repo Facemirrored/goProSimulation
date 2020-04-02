@@ -1,0 +1,15 @@
+%     Erwartetes Ergebnis:
+%     Keine Loesung, da Ziffer 2 dreimal auf Karte 1, jedoch nur eine andere Karte mit Ziffer 2
+%
+2 2 2 0 0
+2 0 0 0 0
+0 0 0 0 0
+0 0 0 0 0
+0 0 0 0 0
+0 0 0 0 0
+0 0 0 0 0
+0 0 0 0 0
+0 0 0 0 0
+0 0 0 0 0
+0 0 0 0 0
+0 0 0 0 0

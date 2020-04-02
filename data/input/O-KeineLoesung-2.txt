@@ -1,0 +1,15 @@
+%     Erwartetes Ergebnis:
+%     Keine Loesung, da Ziffer 2 nur auf Karte 1
+%
+2 2 0 0 0
+0 0 0 0 0
+0 0 0 0 0
+0 0 0 0 0
+0 0 0 0 0
+0 0 0 0 0
+0 0 0 0 0
+0 0 0 0 0
+0 0 0 0 0
+0 0 0 0 0
+0 0 0 0 0
+0 0 0 0 0

@@ -82,13 +82,13 @@ public class PuzzleMapper {
       stringBuilder.append("****\tLösung gefunden\t****")
           .append("\n\nEine mögliche Zuordnung der Karten auf die Puzzlefelder:\n\n")
           .append(
-              "\tFeld\t|\tKarte\t|\tGrundkante an 5-Eck\n======================================\n");
+              "\tFeld\t|\tKarte\t|\tGrundkante an 5-Eck\n===========================================================\n");
       for (int i = 0; i < puzzlefeld.size(); ++i) {
         Feld feld = puzzlefeld.get(i);
 
-        stringBuilder.append("\t").append(i).append((i < 10) ? "\t\t\t|\t\t" : "\t\t|\t\t")
+        stringBuilder.append("\t").append(i < 10 ? " " : "").append(i).append("\t|\t")
             .append(feld.getKarte().getKartennummer() < 10 ? " " : "")
-            .append(feld.getKarte().getKartennummer()).append("\t\t\t")
+            .append(feld.getKarte().getKartennummer()).append("\t|\t")
             .append(feld.getNachbarfelder()
                 .get(feld.getKarte().getKanten()[feld.getKarte().getRotationsposition()]).getId())
             .append("\n");

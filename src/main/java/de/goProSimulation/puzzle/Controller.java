@@ -46,7 +46,7 @@ public class Controller {
         }
       }
 
-      textfileStream.saveFile(outputStringList);
+      textfileStream.saveFile(args[1], outputStringList);
 
     } catch (IllegalArgumentException | FileStreamReadException exception) {
       System.out.println(exception.getMessage());
